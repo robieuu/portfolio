@@ -94,7 +94,7 @@ window.addEventListener("load", () => {
             if (typeof(this.link) == "string") {
               window.open(this.link, "_self")
             }
-            else if (typeof(this.link) == "number") {
+            else if (this.link == 1) {
               down = 3;
               award = true;
             }
