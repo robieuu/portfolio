@@ -117,7 +117,7 @@ window.addEventListener("load", () => {
   texts.push(new text("________________________________",0.013,60,{x:120,y:500},{x:2000,y:500},{x:2000,y:500}));
   texts.push(new text("________________________________",0.014,60,{x:120,y:600},{x:2000,y:600},{x:2000,y:600}));
 
-  links.push(new link("HOME", 20, 0, {x : innerWidth / 5 * 1.4, y : 80}));
+  links.push(new link("HOME", 20, "https://robieuu.github.io/portfolio/", {x : innerWidth / 5 * 1.4, y : 80}));
   links.push(new link("AWARDS", 20, 1, {x : innerWidth / 5 * 2.2, y : 80}));
   links.push(new link("PROJECTS", 20, "https://robieuu.github.io/projects/", {x : innerWidth / 5 * 3, y : 80}));
 
