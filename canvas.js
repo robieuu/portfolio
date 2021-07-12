@@ -226,6 +226,8 @@ window.addEventListener("load", () => {
       links[i].update();
     }
     mouse.pressed = false;
+    c.fillStyle = "black";
+    c.fillText("⭥ Scroll ⭥", window.innerWidth / 2 - 50, window.innerHeight - 100);
   }
 
   function lerp(a, b, f) {
