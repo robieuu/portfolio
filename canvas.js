@@ -112,10 +112,10 @@ window.addEventListener("load", () => {
   texts.push(new text("____",0.01,80,{x:-1000,y:360},{x:120,y:360}));
   texts.push(new text("  ___",0.015,80,{x:-1000,y:380},{x:120,y:380}));
   texts.push(new text("About me",0.012,60,{x:120,y:250},{x:120,y:-200},{x:120,y:-200}));
-  texts.push(new text("________________________________",0.011,60,{x:120,y:350},{x:-2000,y:350},{x:-2000,y:450}));
-  texts.push(new text("________________________________",0.01,60,{x:120,y:450},{x:-2000,y:450},{x:-2000,y:450}));
-  texts.push(new text("________________________________",0.009,60,{x:120,y:550},{x:-2000,y:550},{x:-2000,y:550}));
-  texts.push(new text("________________________________",0.008,60,{x:120,y:650},{x:-2000,y:650},{x:-2000,y:650}));
+  texts.push(new text("I developed my passion and intrest",0.011,60,{x:120,y:350},{x:-2000,y:350},{x:-2000,y:450}));
+  texts.push(new text("in IT when I first joined the robotics",0.01,60,{x:120,y:450},{x:-2000,y:450},{x:-2000,y:450}));
+  texts.push(new text("CCA. I have since then doen more complex",0.009,60,{x:120,y:550},{x:-2000,y:550},{x:-2000,y:550}));
+  texts.push(new text("projects such as this website",0.008,60,{x:120,y:650},{x:-2000,y:650},{x:-2000,y:650}));
   links.push(new link("HOME", 20, "https://robieuu.github.io/portfolio/", {x : innerWidth / 3 - 50, y : 80}));
   links.push(new link("AWARDS", 20, 1, {x : innerWidth / 3 * 1.5 - 50, y : 80}));
   links.push(new link("PROJECTS", 20, "https://robieuu.github.io/projects/", {x : innerWidth / 3 * 2 - 50, y : 80}));
