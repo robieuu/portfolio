@@ -199,6 +199,10 @@ window.addEventListener("load", () => {
     awards[6][1] = window.innerWidth / 3 * 2 - 180;
     awards[7][1] = window.innerWidth / 3 - 180;
     awards[8][1] = window.innerWidth / 3 * 2 - 180;
+    
+    for (var i = 4; i < texts.length; i ++) {
+      texts[i].start.x = (window.innerWidth - 1070) / 2;
+    }
 
     for (var i = 0; i < clouds.length; i ++) {
       c.drawImage(clouds[i][0], clouds[i][1] - (mouse.x + innerWidth / 2) / innerWidth * 100 * clouds[i][3], clouds[i][2] - (mouse.y + innerHeight / 2) / innerHeight * 100 * clouds[i][3]);
