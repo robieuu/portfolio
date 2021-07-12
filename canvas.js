@@ -202,6 +202,7 @@ window.addEventListener("load", () => {
     }
 
     for (var i = 0; i < clouds.length; i ++) {
+      clouds[i][2] = window.innerHeight - (700 - i * 100);
       c.drawImage(clouds[i][0], clouds[i][1] - (mouse.x + innerWidth / 2) / innerWidth * 100 * clouds[i][3], clouds[i][2] - (mouse.y + innerHeight / 2) / innerHeight * 100 * clouds[i][3]);
     }
 
