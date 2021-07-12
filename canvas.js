@@ -155,17 +155,19 @@ window.addEventListener("load", () => {
   var cloud3 = new Image();
   var cloud4 = new Image();
   var cloud5 = new Image();
+  var moon = new Image();
   cloud1.src = "images/cloud1.png";
   cloud2.src = "images/cloud2.png";
   cloud3.src = "images/cloud3.png";
   cloud4.src = "images/cloud4.png";
   cloud5.src = "images/cloud5.png";
+  moon.src = "images/moon.png";
   clouds.push([cloud5, -((Math.random() * 200) + 1500), 300, 0.10]);
   clouds.push([cloud4, -((Math.random() * 200) + 2200), 400, 0.20]);
   clouds.push([cloud3, -((Math.random() * 200) + 1800), 500, 0.30]);
   clouds.push([cloud2, -((Math.random() * 200) + 2000), 600, 0.50]);
   clouds.push([cloud1, -((Math.random() * 200) + 1000), 700, 0.70]);
-
+  clouds.push([moon, 10, 10, 0.05]);
   main();
 
   function main() {
@@ -202,7 +204,7 @@ window.addEventListener("load", () => {
     }
 
     for (var i = 0; i < clouds.length; i ++) {
-      clouds[i][2] = window.innerHeight - (700 - i * 100);
+      if (i < 4)clouds[i][2] = window.innerHeight - (700 - i * 100);
       c.drawImage(clouds[i][0], clouds[i][1] - (mouse.x + innerWidth / 2) / innerWidth * 100 * clouds[i][3], clouds[i][2] - (mouse.y + innerHeight / 2) / innerHeight * 100 * clouds[i][3]);
     }
 
