@@ -111,15 +111,18 @@ window.addEventListener("load", () => {
   texts.push(new text("CHANG",0.018,80,{x:-500,y:320},{x:140,y:320}));
   texts.push(new text("____",0.01,80,{x:-1000,y:360},{x:120,y:360}));
   texts.push(new text("  ___",0.015,80,{x:-1000,y:380},{x:120,y:380}));
-  texts.push(new text("About me",0.012,60,{x:120,y:200},{x:120,y:-200},{x:120,y:-200}));
-  texts.push(new text("________________________________",0.011,60,{x:120,y:300},{x:2000,y:300},{x:2000,y:300}));
+  texts.push(new text("About me",0.012,60,{x:120,y:250},{x:120,y:-200},{x:120,y:-200}));
+  /*texts.push(new text("________________________________",0.011,60,{x:120,y:300},{x:2000,y:300},{x:2000,y:300}));
   texts.push(new text("________________________________",0.012,60,{x:120,y:400},{x:2000,y:400},{x:2000,y:400}));
   texts.push(new text("________________________________",0.013,60,{x:120,y:500},{x:2000,y:500},{x:2000,y:500}));
-  texts.push(new text("________________________________",0.014,60,{x:120,y:600},{x:2000,y:600},{x:2000,y:600}));
-
-  links.push(new link("HOME", 20, "https://robieuu.github.io/portfolio/", {x : innerWidth / 5 * 1.4, y : 80}));
-  links.push(new link("AWARDS", 20, 1, {x : innerWidth / 5 * 2.2, y : 80}));
-  links.push(new link("PROJECTS", 20, "https://robieuu.github.io/projects/", {x : innerWidth / 5 * 3, y : 80}));
+  texts.push(new text("________________________________",0.014,60,{x:120,y:600},{x:2000,y:600},{x:2000,y:600}));*/
+  texts.push(new text("________________________________",0.011,60,{x:120,y:350},{x:-2000,y:350},{x:-2000,y:450}));
+  texts.push(new text("________________________________",0.01,60,{x:120,y:450},{x:-2000,y:450},{x:-2000,y:450}));
+  texts.push(new text("________________________________",0.009,60,{x:120,y:550},{x:-2000,y:550},{x:-2000,y:550}));
+  texts.push(new text("________________________________",0.008,60,{x:120,y:650},{x:-2000,y:650},{x:-2000,y:650}));
+  links.push(new link("HOME", 20, 0, {x : innerWidth / 3 - 50, y : 80}));
+  links.push(new link("AWARDS", 20, 1, {x : innerWidth / 3 * 1.5 - 50, y : 80}));
+  links.push(new link("PROJECTS", 20, "https://robieuu.github.io/projects/", {x : innerWidth / 3 * 2 - 50, y : 80}));
 
   var awardn = 0, awards = [];
   var a1 = new Image();
@@ -140,15 +143,15 @@ window.addEventListener("load", () => {
   a7.src = "images/award7.png";
   a8.src = "images/award8.png";
   a9.src = "images/award9.png";
-  awards.push([a1, 050, 0, 0]);
-  awards.push([a2, 650, 0, 0]);
-  awards.push([a3, 050, 0, 1]);
-  awards.push([a4, 420, 0, 1]);
-  awards.push([a5, 800, 0, 1]);
-  awards.push([a6, 150, 0, 2]);
-  awards.push([a7, 600, 0, 2]);
-  awards.push([a8, 150, 0, 3]);
-  awards.push([a9, 600, 0, 3]);
+  awards.push([a1, window.innerWidth / 3 - 300, 0, 0]);
+  awards.push([a2, window.innerWidth / 3 * 2 - 212, 0, 0]);
+  awards.push([a3, window.innerWidth / 4 - 210, 0, 1]);
+  awards.push([a4, window.innerWidth / 4 * 2 - 180, 0, 1]);
+  awards.push([a5, window.innerWidth / 4 * 3 - 150, 0, 1]);
+  awards.push([a6, window.innerWidth / 3 - 180, 0, 2]);
+  awards.push([a7, window.innerWidth / 3 * 2 - 180, 0, 2]);
+  awards.push([a8, window.innerWidth / 3 - 180, 0, 3]);
+  awards.push([a9, window.innerWidth / 3 * 2 - 180, 0, 3]);
 
   var clouds = [];
   var cloud1 = new Image();
@@ -165,22 +168,37 @@ window.addEventListener("load", () => {
   clouds.push([cloud4, -((Math.random() * 200) + 2200), 400, 0.20]);
   clouds.push([cloud3, -((Math.random() * 200) + 1800), 500, 0.30]);
   clouds.push([cloud2, -((Math.random() * 200) + 2000), 600, 0.50]);
-  clouds.push([cloud1, -((Math.random() * 200) + 1600), 700, 0.70]);
-
-
-
+  clouds.push([cloud1, -((Math.random() * 200) + 1000), 700, 0.70]);
 
   main();
 
   function main() {
+
+    c.canvas.width = window.innerWidth;
+    c.canvas.height = window.innerHeight;
+
     requestAnimationFrame(main);
-    var grd = c.createLinearGradient(0, -1000, 0, innerHeight);
+    var grd = c.createLinearGradient(0, -1000, 0, window.innerHeight);
     grd.addColorStop(0, "#185ADB");
     grd.addColorStop(1, "#1A1A2E");
     c.fillStyle = grd;
-    c.fillRect(0, 0, innerWidth, innerHeight);
+    c.fillRect(0, 0, window.innerWidth, window.innerHeight);
     c.fillStyle = "white";
 
+    links[0].pos.x = window.innerWidth / 3 - 50;
+    links[1].pos.x = window.innerWidth / 3 * 1.5 - 55;
+    links[2].pos.x = window.innerWidth / 3 * 2 - 50;
+
+
+    awards[0][1] = window.innerWidth / 3 - 300;
+    awards[1][1] = window.innerWidth / 3 * 2 - 212;
+    awards[2][1] = window.innerWidth / 4 - 210;
+    awards[3][1] = window.innerWidth / 4 * 2 - 180;
+    awards[4][1] = window.innerWidth / 4 * 3 - 150;
+    awards[5][1] = window.innerWidth / 3 - 180;
+    awards[6][1] = window.innerWidth / 3 * 2 - 180;
+    awards[7][1] = window.innerWidth / 3 - 180;
+    awards[8][1] = window.innerWidth / 3 * 2 - 180;
 
     for (var i = 0; i < clouds.length; i ++) {
       c.drawImage(clouds[i][0], clouds[i][1] - (mouse.x + innerWidth / 2) / innerWidth * 100 * clouds[i][3], clouds[i][2] - (mouse.y + innerHeight / 2) / innerHeight * 100 * clouds[i][3]);
