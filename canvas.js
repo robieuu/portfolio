@@ -112,10 +112,10 @@ window.addEventListener("load", () => {
   texts.push(new text("____",0.01,80,{x:-1000,y:360},{x:120,y:360}));
   texts.push(new text("  ___",0.015,80,{x:-1000,y:380},{x:120,y:380}));
   texts.push(new text("About me",0.012,60,{x:120,y:250},{x:120,y:-200},{x:120,y:-200}));
-  texts.push(new text("I developed my passion and interest in IT when I first joined the robotics",0.011,30,{x:120,y:350},{x:-2000,y:350},{x:-2000,y:350}));
-  texts.push(new text("CCA in primary school where I learnt to program robots to do tasks. Since ",0.01,30,{x:120,y:450},{x:-2000,y:400},{x:-2000,y:400}));
-  texts.push(new text("then, I have learnt more on programming using Python, Javascript, C++ and",0.009,30,{x:120,y:550},{x:-2000,y:450},{x:-2000,y:450}));
-  texts.push(new text("HTML which I used to make my projects.",0.008,30,{x:120,y:650},{x:-2000,y:500},{x:-2000,y:500}));
+  texts.push(new text("I developed my passion and interest in IT when I first joined the robotics",0.011,30,{x:-2000,y:320},{x:-2000,y:320},{x:-2000,y:320}));
+  texts.push(new text("CCA in primary school where I learnt to program robots to do tasks. Since ",0.01,30,{x:-2000,y:370},{x:-2000,y:370},{x:-2000,y:370}));
+  texts.push(new text("then, I have learnt more on programming using Python, Javascript, C++ and ",0.009,30,{x:-2000,y:420},{x:-2000,y:420},{x:-2000,y:420}));
+  texts.push(new text("HTML which I used to make my projects.",0.008,30,{x:-2000,y:470},{x:-2000,y:470},{x:-2000,y:470}));
   links.push(new link("HOME", 20, "https://robieuu.github.io/portfolio/", {x : innerWidth / 3 - 50, y : 80}));
   links.push(new link("AWARDS", 20, 1, {x : innerWidth / 3 * 1.5 - 50, y : 80}));
   links.push(new link("PROJECTS", 20, "https://robieuu.github.io/projects/", {x : innerWidth / 3 * 2 - 50, y : 80}));
