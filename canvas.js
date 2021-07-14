@@ -113,8 +113,8 @@ window.addEventListener("load", () => {
   texts.push(new text("  ___",0.015,80,{x:-1000,y:380},{x:120,y:380}));
   texts.push(new text("About me",0.012,60,{x:120,y:250},{x:120,y:-200},{x:120,y:-200}));
   texts.push(new text("I developed my passion and interest in IT when I first joined the robotics",0.011,30,{x:-2000,y:320},{x:-2000,y:320},{x:-2000,y:320}));
-  texts.push(new text("CCA in primary school where I learnt to program robots to do tasks. Since ",0.01,30,{x:-2000,y:370},{x:-2000,y:370},{x:-2000,y:370}));
-  texts.push(new text("then, I have learnt more on programming using Python, Javascript, C++ and ",0.009,30,{x:-2000,y:420},{x:-2000,y:420},{x:-2000,y:420}));
+  texts.push(new text("CCA in primary school where I learnt to program robots to do tasks. Since",0.01,30,{x:-2000,y:370},{x:-2000,y:370},{x:-2000,y:370}));
+  texts.push(new text("then, I have learnt more on programming using Python, Javascript, C++ and",0.009,30,{x:-2000,y:420},{x:-2000,y:420},{x:-2000,y:420}));
   texts.push(new text("HTML which I used to make my projects.",0.008,30,{x:-2000,y:470},{x:-2000,y:470},{x:-2000,y:470}));
   links.push(new link("HOME", 20, "https://robieuu.github.io/portfolio/", {x : innerWidth / 3 - 50, y : 80}));
   links.push(new link("AWARDS", 20, 1, {x : innerWidth / 3 * 1.5 - 50, y : 80}));
@@ -160,11 +160,12 @@ window.addEventListener("load", () => {
   cloud3.src = "images/cloud3.png";
   cloud4.src = "images/cloud4.png";
   cloud5.src = "images/cloud5.png";
-  clouds.push([cloud5, -((Math.random() * 200) + 1500), 300, 0.10]);
-  clouds.push([cloud4, -((Math.random() * 200) + 2200), 400, 0.20]);
-  clouds.push([cloud3, -((Math.random() * 200) + 1800), 500, 0.30]);
-  clouds.push([cloud2, -((Math.random() * 200) + 2000), 600, 0.50]);
-  clouds.push([cloud1, -((Math.random() * 200) + 1000), 700, 0.70]);
+  clouds.push([cloud5, -((Math.random() * 200) + 1500), window.innerHeight - 700, 0.10]);
+  clouds.push([cloud4, -((Math.random() * 200) + 2200), window.innerHeight - 600, 0.20]);
+  clouds.push([cloud3, -((Math.random() * 200) + 1800), window.innerHeight - 500, 0.30]);
+  clouds.push([cloud2, -((Math.random() * 200) + 2000), window.innerHeight - 400, 0.50]);
+  clouds.push([cloud1, -((Math.random() * 200) + 1000), window.innerHeight - 300, 0.70]);
+
   main();
 
   function main() {
@@ -194,10 +195,9 @@ window.addEventListener("load", () => {
     awards[6][1] = window.innerWidth / 3 * 2 - 180;
     awards[7][1] = window.innerWidth / 3 - 180;
     awards[8][1] = window.innerWidth / 3 * 2 - 180;
-    
+
     for (var i = 4; i < texts.length; i ++) {
-      texts[i].start.x = (window.innerWidth - 1070) / 2;
-      if (i == 4)texts[i].end.x = (window.innerWidth - 1070) / 2;
+      texts[i].start.x = Math.max(((window.innerWidth - 1070) / 2), 100);
     }
 
     for (var i = 0; i < clouds.length; i ++) {
@@ -210,7 +210,7 @@ window.addEventListener("load", () => {
         texts[i].update(3);
         for (var i = 0; i < awards.length; i ++) {
           var a = awards[i]
-          a[2] = lerp(a[2], + a[3] * 1000 + 280 - awardn * 1000, 0.02)
+          a[2] = lerp(a[2], + a[3] * window.innerHeight + 280 - awardn * window.innerHeight, 0.02)
           c.drawImage(a[0], a[1], a[2])
         }
 
@@ -225,9 +225,39 @@ window.addEventListener("load", () => {
     for (var i = 0; i < links.length; i ++) {
       links[i].update();
     }
-    mouse.pressed = false;
     c.fillStyle = "black";
     c.fillText("⭥ Scroll ⭥", window.innerWidth / 2 - 50, window.innerHeight - 100);
+    c.fillText("🡹", window.innerWidth - 100, window.innerHeight / 2 - 50);
+    c.fillText("🡻", window.innerWidth - 100, window.innerHeight / 2 + 50);
+
+    if (distance({x:window.innerWidth - 100 + 8,y:window.innerHeight / 2 - 57}, mouse) < 30) {
+      if (mouse.pressed) {
+        up = true;
+        down = false;
+        if (award && awardn > 0) {
+          awardn --;
+        }
+      }
+    }
+    if (distance({x:window.innerWidth - 100 + 8,y:window.innerHeight / 2 + 46}, mouse) < 30) {
+      if (mouse.pressed) {
+        down = true;
+        up = false;
+        if (award && awardn < 3) {
+          awardn ++;
+        }
+      }
+    }
+
+
+    mouse.pressed = false;
+  }
+
+  function distance(p1, p2) {
+    var x = p1.x - p2.x,
+        y = p1.y - p2.y;
+
+    return Math.sqrt(x * x + y * y);
   }
 
   function lerp(a, b, f) {
