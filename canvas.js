@@ -198,6 +198,7 @@ window.addEventListener("load", () => {
 
     for (var i = 4; i < texts.length; i ++) {
       texts[i].start.x = Math.max(((window.innerWidth - 1070) / 2), 100);
+      if (i == 4) texts[i].end.x = Math.max(((window.innerWidth - 1070) / 2), 100);
     }
 
     for (var i = 0; i < clouds.length; i ++) {
