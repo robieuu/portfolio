@@ -230,8 +230,10 @@ window.addEventListener("load", () => {
     }
     c.fillStyle = "black";
     c.fillText("⭥ Scroll ⭥", window.innerWidth / 2 - 50, window.innerHeight - 100);
-    c.fillText("UP", window.innerWidth - 100, window.innerHeight / 2 - 50);
-    c.fillText("DOWN", window.innerWidth - 100, window.innerHeight / 2 + 50);
+    //c.fillText("UP", window.innerWidth - 100, window.innerHeight / 2 - 50);
+    //c.fillText("DOWN", window.innerWidth - 100, window.innerHeight / 2 + 50);
+    triangle(window.innerWidth - 100, window.innerHeight / 2 - 50, 15, 1);
+    triangle(window.innerWidth - 100, window.innerHeight / 2 + 50, 15, -1);
 
     if (distance({x:window.innerWidth - 100 + 8,y:window.innerHeight / 2 - 57}, mouse) < 30) {
       if (mouse.pressed) {
@@ -254,6 +256,16 @@ window.addEventListener("load", () => {
 
 
     mouse.pressed = false;
+  }
+  
+  function triangle(x, y, l, d) {
+    x += 10;
+    y -= 10;
+    c.beginPath();
+    c.moveTo(x, y - l * d);
+    c.lineTo(x - l, y + l * d);
+    c.lineTo(x + l, y + l * d);
+    c.fill();
   }
 
   function distance(p1, p2) {
