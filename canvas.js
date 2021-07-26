@@ -116,8 +116,7 @@ window.addEventListener("load", () => {
   texts.push(new text("CCA in primary school where I learnt to program robots to do tasks. Since",0.01,30,{x:-2000,y:370},{x:-2000,y:370},{x:-2000,y:370}));
   texts.push(new text("then, I have learnt more on programming using Python, Javascript, C++ and",0.009,30,{x:-2000,y:420},{x:-2000,y:420},{x:-2000,y:420}));
   texts.push(new text("HTML and have done many different types of projects ranging from simple",0.008,30,{x:-2000,y:470},{x:-2000,y:470},{x:-2000,y:470}));
-  texts.push(new text("games to complex algorithms like pathfinding, machine learnging, ray tracing",0.007,30,{x:-2000,y:520},{x:-2000,y:520},{x:-2000,y:520}));
-  texts.push(new text("and also physics simulations.",0.006,30,{x:-2000,y:570},{x:-2000,y:570},{x:-2000,y:570}));
+  texts.push(new text("games to complex algorithms like physics simulations, machine learnging and ray tracing",0.007,30,{x:-2000,y:520},{x:-2000,y:520},{x:-2000,y:520}));
   links.push(new link("HOME", 20, "https://robieuu.github.io/portfolio/", {x : innerWidth / 3 - 50, y : 80}));
   links.push(new link("AWARDS", 20, 1, {x : innerWidth / 3 * 1.5 - 50, y : 80}));
   links.push(new link("PROJECTS", 20, "https://robieuu.github.io/projects/", {x : innerWidth / 3 * 2 - 50, y : 80}));
