@@ -228,8 +228,8 @@ window.addEventListener("load", () => {
     }
     c.fillStyle = "black";
     c.fillText("⭥ Scroll ⭥", window.innerWidth / 2 - 50, window.innerHeight - 100);
-    c.fillText("🡹", window.innerWidth - 100, window.innerHeight / 2 - 50);
-    c.fillText("🡻", window.innerWidth - 100, window.innerHeight / 2 + 50);
+    c.fillText("UP", window.innerWidth - 100, window.innerHeight / 2 - 50);
+    c.fillText("DOWN", window.innerWidth - 100, window.innerHeight / 2 + 50);
 
     if (distance({x:window.innerWidth - 100 + 8,y:window.innerHeight / 2 - 57}, mouse) < 30) {
       if (mouse.pressed) {
